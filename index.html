@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Такси Дмитрия — быстрый и комфортный заказ такси в городе и области. Оставьте отзыв или свяжитесь с водителем.">
+  <title>Дмитрий — Такси в городе</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="header">
+    <div class="container header__inner">
+      <div class="header__logo">
+        <span class="header__logo-icon">🚕</span>
+        <span class="header__logo-text">Дмитрий</span>
+      </div>
+      <nav class="header__nav" id="mainNav" aria-label="Основная навигация">
+        <ul class="header__nav-list">
+          <li><a href="#about" class="header__nav-link">Обо мне</a></li>
+          <li><a href="#reviews" class="header__nav-link">Отзывы</a></li>
+          <li><a href="#contacts" class="header__nav-link">Контакты</a></li>
+        </ul>
+      </nav>
+      <button class="header__burger" id="burgerBtn" aria-label="Открыть меню" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="about">
+      <div class="container hero__inner">
+        <div class="hero__content">
+          <h1 class="hero__title">Такси Дмитрия</h1>
+          <p class="hero__subtitle">Быстро, комфортно, безопасно. Работаю по городу и области.</p>
+          <a href="tel:+79991234567" class="btn btn--primary hero__btn">Заказать такси</a>
+        </div>
+        <div class="hero__image">
+          <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Автомобиль такси на дороге" loading="lazy" onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22600%22 height=%22400%22 viewBox=%220 0 600 400%22%3E%3Crect fill=%22%23e2e8f0%22 width=%22600%22 height=%22400%22/%3E%3Ctext fill=%22%2394a3b8%22 font-family=%22Arial%22 font-size=%2224%22 x=%22200%22 y=%22210%22%3EИзображение такси%3C/text%3E%3C/svg%3E';">
+        </div>
+      </div>
+    </section>
+
+    <section class="features">
+      <div class="container">
+        <h2 class="section-title">Почему выбирают меня</h2>
+        <div class="features__grid">
+          <div class="feature-card">
+            <div class="feature-card__icon" aria-hidden="true">⏱️</div>
+            <h3>Пунктуальность</h3>
+            <p>Приезжаю вовремя, без опозданий.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-card__icon" aria-hidden="true">🧼</div>
+            <h3>Чистота</h3>
+            <p>Автомобиль всегда в идеальном состоянии.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-card__icon" aria-hidden="true">💬</div>
+            <h3>Вежливость</h3>
+            <p>Всегда приветлив и готов помочь.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="reviews" id="reviews">
+      <div class="container">
+        <h2 class="section-title">Отзывы клиентов</h2>
+        <div class="reviews__controls">
+          <div class="reviews__filter">
+            <label for="filterStars" class="visually-hidden">Фильтр по оценке</label>
+            <select id="filterStars" class="reviews__select">
+              <option value="0">Все отзывы</option>
+              <option value="5">5 звёзд</option>
+              <option value="4">4 звезды</option>
+              <option value="3">3 звезды и ниже</option>
+            </select>
+            <button id="clearFilterBtn" class="btn btn--secondary btn--small" aria-label="Сбросить фильтр">Сбросить</button>
+          </div>
+        </div>
+        <div id="reviewsList" class="reviews__list" role="feed" aria-label="Список отзывов"></div>
+
+        <div class="reviews__form-wrapper">
+          <h3 class="reviews__form-title">Оставить отзыв</h3>
+          <form id="reviewForm" class="reviews__form" novalidate>
+            <div class="form-group">
+              <label for="reviewName" class="form-label">Ваше имя</label>
+              <input type="text" id="reviewName" class="form-input" placeholder="Иван" minlength="2" required>
+              <span id="nameError" class="form-error" role="alert"></span>
+            </div>
+            <div class="form-group">
+              <label for="reviewStars" class="form-label">Оценка</label>
+              <div class="star-rating" role="radiogroup" aria-label="Оценка от 1 до 5">
+                <span class="star" data-value="1" tabindex="0" role="radio" aria-checked="false" aria-label="1 звезда">★</span>
+                <span class="star" data-value="2" tabindex="0" role="radio" aria-checked="false" aria-label="2 звезды">★</span>
+                <span class="star" data-value="3" tabindex="0" role="radio" aria-checked="false" aria-label="3 звезды">★</span>
+                <span class="star" data-value="4" tabindex="0" role="radio" aria-checked="false" aria-label="4 звезды">★</span>
+                <span class="star" data-value="5" tabindex="0" role="radio" aria-checked="false" aria-label="5 звёзд">★</span>
+              </div>
+              <input type="hidden" id="reviewStars" value="0">
+            </div>
+            <div class="form-group">
+              <label for="reviewText" class="form-label">Текст отзыва</label>
+              <textarea id="reviewText" class="form-input form-textarea" placeholder="Поделитесь впечатлениями..." minlength="10" required></textarea>
+              <span id="textError" class="form-error" role="alert"></span>
+            </div>
+            <button type="submit" class="btn btn--primary">Отправить отзыв</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section class="contacts" id="contacts">
+      <div class="container">
+        <h2 class="section-title">Контакты</h2>
+        <div class="contacts__grid">
+          <div class="contact-card">
+            <div class="contact-card__icon" aria-hidden="true">📞</div>
+            <h3>Телефон</h3>
+            <a href="tel:+79991234567" class="contact-card__link">+7 (999) 123-45-67</a>
+          </div>
+          <div class="contact-card">
+            <div class="contact-card__icon" aria-hidden="true">💬</div>
+            <h3>WhatsApp</h3>
+            <a href="https://wa.me/79991234567" class="contact-card__link" target="_blank" rel="noopener noreferrer">Написать в WhatsApp</a>
+          </div>
+          <div class="contact-card">
+            <div class="contact-card__icon" aria-hidden="true">✈️</div>
+            <h3>Telegram</h3>
+            <a href="https://t.me/dima_taxi" class="contact-card__link" target="_blank" rel="noopener noreferrer">Написать в Telegram</a>
+          </div>
+        </div>
+        <div class="contacts__cta">
+          <a href="tel:+79991234567" class="btn btn--primary btn--large">Заказать такси</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p>&copy; 2025 Дмитрий — Такси в городе</p>
+    </div>
+  </footer>
+
+  <div id="toast" class="toast" role="alert" aria-live="polite"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
