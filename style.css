@@ -75,21 +75,21 @@ ul {
 }
 
 .btn--primary {
-  background-color: #2563eb;
+  background-color: #28a745;
   color: #ffffff;
 }
 
 .btn--primary:hover {
-  background-color: #1d4ed8;
+  background-color: #218838;
 }
 
 .btn--secondary {
-  background-color: #e2e8f0;
-  color: #1e293b;
+  background-color: #218838;
+  color: #ffffff;
 }
 
 .btn--secondary:hover {
-  background-color: #cbd5e1;
+  background-color: #1e7e34;
 }
 
 .btn--large {
