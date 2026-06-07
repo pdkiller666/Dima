@@ -1,0 +1,44 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  sanity-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check HTML validity
+        run: |
+          if grep -q "<html" index.html; then
+            echo "HTML file found"
+          else
+            echo "No HTML file"
+            exit 1
+          fi
+
+      - name: Check CSS file
+        run: |
+          if [ -f style.css ]; then
+            echo "CSS file exists"
+          else
+            echo "Missing style.css"
+            exit 1
+          fi
+
+      - name: Check JS file
+        run: |
+          if [ -f script.js ]; then
+            echo "JS file exists"
+          else
+            echo "Missing script.js"
+            exit 1
+          fi
+
+      - name: Lint JavaScript with ESLint
+        run: |
+          npx eslint script.js --no-eslintrc --env browser,es2021 --parser-options ecmaVersion:12 --rule '{"no-var":"error","no-alert":"error"}'
