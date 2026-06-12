@@ -82,19 +82,23 @@ ul {
 .btn--primary {
   background-color: #28a745;
   color: #ffffff;
+  border-color: #28a745;
 }
 
 .btn--primary:hover {
   background-color: #218838;
+  border-color: #218838;
 }
 
 .btn--secondary {
   background-color: #218838;
   color: #ffffff;
+  border-color: #218838;
 }
 
 .btn--secondary:hover {
   background-color: #1e7e34;
+  border-color: #1e7e34;
 }
 
 .btn--large {
